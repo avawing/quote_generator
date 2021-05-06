@@ -484,3 +484,18 @@ const QUOTES_ARRAY = [
       "- Mark Twain",
   },
 ];
+
+function generateQuote() {
+  const index = Math.floor(Math.random() * QUOTES_ARRAY.length) + 1;
+
+  document.getElementById("quote").textContent = Object.keys(
+    QUOTES_ARRAY[index]
+  );
+  document.getElementById("author").textContent = Object.values(
+    QUOTES_ARRAY[index]
+  );
+}
+
+document
+  .getElementsByClassName("btn")[0]
+  .addEventListener("click", generateQuote);
